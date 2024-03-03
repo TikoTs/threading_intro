@@ -9,6 +9,7 @@ f = open('products.json', 'w')
 
 lock = threading.Lock()
 products = []
+threads = []
 
 
 def get_response(start_range, end_range):
@@ -19,8 +20,6 @@ def get_response(start_range, end_range):
         with lock:
             products.append(r)
 
-
-threads = []
 
 
 for i in range(0, 91, 10):
